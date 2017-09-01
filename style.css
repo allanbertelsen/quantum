@@ -122,11 +122,23 @@ table.t1 {
 
 .t1 tr *:nth-child(3), .t1 tr *:nth-child(4) {}
 
+td.active {
+  /*    border: 2px dotted #c9c9c9;*/
+  outline-color : rgb(91, 157, 217);
+  outline-width: : 5px;
+  /* outline-style:  auto;*/
+}
+
+.editing {
+  /*    border: 2px dotted #c9c9c9;*/
+  /* outline: rgb(91, 157, 217) auto 5px; */
+}
+
 td:hover {
   /*color: #fff;;*/
-  outline-color: rgb(91, 157, 217);
+  /*outline-color: rgb(91, 157, 217);
   outline-width: 1px;
-  outline-style: solid;
+  outline-style: solid;*/
 }
 
 td:focus {
@@ -134,11 +146,6 @@ td:focus {
   outline-color: rgb(91, 157, 217);
   outline-width: 5px;
   outline-style: solid;
-}
-
-.editing {
-  /*    border: 2px dotted #c9c9c9;*/
-  outline: rgb(91, 157, 217) auto 5px;
 }
 
 #edit {
