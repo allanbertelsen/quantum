@@ -102,12 +102,12 @@ span.psw {
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
-    
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
 }
 
@@ -129,8 +129,8 @@ span.psw {
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
+
+  <form class="modal-content animate" action="/datatable.php">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="KnAvatar.png" alt="Avatar" class="avatar">
@@ -142,7 +142,7 @@ span.psw {
 
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
-        
+
       <button type="submit">Login</button>
       <input type="checkbox" checked="checked"> Remember me
     </div>

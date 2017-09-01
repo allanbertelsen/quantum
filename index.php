@@ -16,17 +16,18 @@ function changeWindow() {
      document.getElementById('winHeader').width='402';
 		 i=190;
   }
-	
-	document.getElementById('winiframe').height=i-35; 
+
+	document.getElementById('winiframe').height=i-35;
 }
 </script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <style>
 #winMinStyle {background-color: white; width:400; height:190; color: #009fe3; border-style: solid; border-width: 1px;position: fixed; left: 498; top: 580 }
 #winMaxStyle {background-color: white; z-index: 10; top:2%; left:5%; position: fixed; width:90%; height:90%; color: #009fe3; border-style: solid; border-width: 1px;box-shadow: 0px 0px 15px #888888; font-family: Calibri, sans-serif;}
 #winHeader {color: #009fe3; font-family: Calibri, sans-serif;border-bottom: 1px solid #009fe3;}
 #calcbut {box-shadow: 0px 0px 15px #888888;}
 #winiframe {color: #009fe3; border-style: hidden;}
-</style>	
+</style>
 
 </head>
 <body>
@@ -43,5 +44,5 @@ function changeWindow() {
     </td></tr>
 </table>
 <IFRAME src="http://www.knauf.dk/prof/vaerktojer-service/vaerktojer/beregningsprogrammer/index.php" frameborder=0 width= 100% height=100%></IFRAME>
-</body>	 
+</body>
 </html>

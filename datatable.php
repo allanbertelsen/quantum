@@ -1,49 +1,52 @@
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="w3.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="quantum_functions.js"></script>
 </head>
 <body>
-	<div class="wrapper">
-	<div class="menu">
-		<p>Beregn</p>
+	<div class="menu xw3-row">
+		<a href href="#" class="menubutton w3-button">Menu&nbsp;pkt&nbsp;1</a>
+		<a href href="#" class="menubutton w3-button">Menu&nbsp;pkt&nbsp;2</a>
+		<a href href="#" class="menubutton w3-button">Beregn</a>
 	</div>
-	<div class="sidebar">S1</div>
-
-	<div class="content">
+	<div class="xw3-row">
+	<div class="contentx xw3-col">
 <?php
-
 //phpinfo();
-error_reporting(-1);
-ini_set('display_errors', 'On');
-$host="localhost";
-$host="127.0.0.1";
-$port=3306;
-$socket="";
-$user="root";
-$password="123";
-$dbname="Quantum";
+DoThings();
 
-$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
-	or die ('Could not connect to the database server' . mysqli_connect_error());
+Function DoThings(){
+	error_reporting(-1);
+	ini_set('display_errors', 'On');
+	$host="localhost";
+	$host="127.0.0.1";
+	$port=3306;
+	$socket="";
+	$user="root";
+	$password="123";
+	$dbname="Quantum";
 
-mysqli_set_charset($con,'utf8');
+	$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+		or die ('Could not connect to the database server' . mysqli_connect_error());
 
-$sql = 'SELECT ParameterVaerdiID as ID, ParameterNavn as Parameter, Vaerdi FROM qryParametersForForm where system=300';
+	mysqli_set_charset($con,'utf8');
 
-ShowTable($sql, $con, 1);
+	$sql = 'SELECT ParameterVaerdiID as ID, ParameterNavn as Parameter, Vaerdi FROM qryParametersForForm where system=300';
 
-$sql = 'SELECT `Materiale nr` as ID, `Materiale nr`, MaterialeKortTekst, Pris FROM Quantum.tblMaterialeListe limit 15';
+	ShowTable($sql, $con, 1);
 
-//ShowTable($sql, $con, 2);
+	$sql = 'SELECT `Materiale nr` as ID, `Materiale nr`, MaterialeKortTekst, Pris FROM Quantum.tblMaterialeListe limit 10';
 
-$sql = 'SELECT * FROM Quantum.tblKonsulent limit 5';
+	ShowTable($sql, $con, 2);
 
-//ShowTable($sql, $con, 3);
+	$sql = 'SELECT * FROM Quantum.tblKonsulent limit 5';
 
-$con->close();
+	//ShowTable($sql, $con, 3);
 
+	$con->close();
+}
 
 Function ShowTable($sql, $con, $tid){
 	//$query = mysqli_query($con, $sql);
@@ -54,7 +57,7 @@ Function ShowTable($sql, $con, $tid){
 	}
 
 	$fields_num = $query->field_count;
-	echo "<table class='t1' id='navigate'><thead><tr>";
+	echo "<div class='ttt'><table class='t1' id='navigate'><thead><tr>";
 	// printing table headers
 
 	$i = 0;
@@ -81,16 +84,16 @@ Function ShowTable($sql, $con, $tid){
 			} else {
 				if (($f[$i]==3) or ($f[$i]==5)) {
 					$t = str_replace(".",",",$t);
-					echo "<td align='right' contenteditable='true' tid='$id'>$t</td>";
+					echo "<td align='right' tid='$id'><span contenteditable='true'>$t</span></td>";
 				} else {
-					echo "<td align='left' contenteditable='true' tid='$id'>$t</td>";
+					echo "<td align='left' tid='$id'><span contenteditable='true'>$t</span></td>";
 				}
 			}
 			$i++;
 		}
 		echo "</tr>\n";
 	}
-	echo "</table>\n";
+	echo "</table></div>\n";
 	//mysql_freeresult($query);
 }
 
@@ -100,9 +103,6 @@ Function DKLetters($text){
 	return str_replace($iletters,$lletters,$text);
 }
 ?>
-</div>
-<div class="sidebar2">s2</div>
-<div class="footer">f</div>
 </div>
 </body>
 </html>
