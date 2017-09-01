@@ -1,9 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="w3.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="quantum_functions.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+
 </head>
 <body>
 	<div class="menu xw3-row">
@@ -11,7 +14,6 @@
 		<a href href="#" class="menubutton w3-button">Menu&nbsp;pkt&nbsp;2</a>
 		<a href href="#" class="menubutton w3-button">Beregn</a>
 	</div>
-	<div class="xw3-row">
 	<div class="contentx xw3-col">
 <?php
 //phpinfo();
@@ -84,9 +86,9 @@ Function ShowTable($sql, $con, $tid){
 			} else {
 				if (($f[$i]==3) or ($f[$i]==5)) {
 					$t = str_replace(".",",",$t);
-					echo "<td align='right' tid='$id'><span contenteditable='true'>$t</span></td>";
+					echo "<td align='right' class='editable' tid='$id'>$t</td>";
 				} else {
-					echo "<td align='left' tid='$id'><span contenteditable='true'>$t</span></td>";
+					echo "<td align='left' class='editable' tid='$id'>$t</td>";
 				}
 			}
 			$i++;
@@ -104,5 +106,6 @@ Function DKLetters($text){
 }
 ?>
 </div>
+	<script src="quantum_functions.js"></script>
 </body>
 </html>
