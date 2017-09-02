@@ -3,8 +3,8 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
-	<link rel="stylesheet" type="text/css" href="w3.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/w3.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 
 </head>
@@ -106,6 +106,6 @@ Function DKLetters($text){
 }
 ?>
 </div>
-	<script src="quantum_functions.js"></script>
+	<script src="js/quantum_functions.js"></script>
 </body>
 </html>
